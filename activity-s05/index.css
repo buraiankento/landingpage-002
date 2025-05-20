@@ -1,0 +1,260 @@
+/* Universal reset to remove default browser styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- General Navigation Menu Styles --- */
+nav ul {
+  list-style-type: none;  /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex;          /* Use flexbox for horizontal layout */
+  background-color: darkblue;  /* Dark background color */
+  overflow: hidden;      /* Ensure proper handling of long menus */
+}
+
+nav ul li {
+  /* No specific style here, but can be used for individual item styling if needed */
+}
+
+nav ul li a {
+  display: block;        /* Make the entire link clickable */
+  color: white;          /* White text color */
+  text-align: center;      /* Center the text */
+  padding: 14px 16px;    /* Vertical and horizontal padding */
+  text-decoration: none;  /* Remove underlines */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+nav ul li a:hover {
+  background-color: black;  /* Darker background on hover */
+}
+
+/* --- Menu Variations (using classes on the <nav> element) --- */
+
+/* 1. Horizontal Menu (Default) */
+nav.horizontal ul {
+  flex-direction: row; /* Redundant, as this is the default */
+}
+
+/* 2. Vertical Menu */
+nav.vertical ul {
+  flex-direction: column;
+}
+
+nav.vertical ul li a {
+  text-align: left; /* Re-align text to left in vertical menu */
+}
+
+/* 3. Fixed Top Menu */
+nav.fixed-top ul {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;          /* Ensure it's above other content */
+}
+
+/* 4. Fixed Bottom Menu */
+nav.fixed-bottom ul {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* 5. Centered Menu */
+nav.centered ul {
+  justify-content: center; /* Center items horizontally */
+}
+
+/* 6. Right-aligned Menu */
+nav.right ul {
+  justify-content: flex-end; /* Align items to the right */
+}
+
+/* 7. Responsive Menu (Basic - for small screens) */
+@media screen and (max-width: 600px) {
+  nav.responsive ul {
+    flex-direction: column;      /* Stack items vertically on small screens */
+  }
+
+  nav.responsive ul li a {
+    text-align: center;
+  }
+}
+
+/* 8. Menu with Borders */
+nav.bordered ul li {
+  border-right: 1px solid #ddd;  /* Light right border */
+}
+
+nav.bordered ul li:last-child {
+  border-right: none;          /* Remove border on the last item */
+}
+
+nav.bordered ul li a {
+  padding: 10px; /* Adjusted padding */
+}
+
+/* 9. Menu with Dropdown */
+nav.dropdown ul li {
+  position: relative; /* Make list items position relative for dropdown */
+}
+
+nav.dropdown ul li ul {
+  /* Style for the dropdown menu (hidden by default) */
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  left: 0;
+  top: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+nav.dropdown ul li:hover > ul { /* Changed selector */
+  /* Show the dropdown menu on hover */
+  display: block;
+}
+
+nav.dropdown ul li ul li {
+  border: none;
+}
+
+nav.dropdown ul li ul li a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+nav.dropdown ul li ul li a:hover {
+  background-color: #ddd;
+}
+
+
+
+#landing {
+  padding: 60px; /* Keep the existing padding */
+  background-color: #f0f8ff; /* A light, slightly off-white background (aliceblue) */
+}
+
+#landing h1 {
+  font-size: 3em;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+#landing h2 {
+  font-size: 1.5em;
+  color: #777;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+#landing h3 {
+  font-size: 1.2em;
+  color: #e67e22;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#landing input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Make the input take full width of its container */
+  box-sizing: border-box; /* Ensure padding and border are within the width */
+}
+
+#landing button[type="submit"] {
+  background-color: #007bff; /* A common primary color */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+#landing button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+
+/*.card {
+  padding: 25px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  width: 300px; Example: Set a fixed width for the cards
+}
+
+.card:last-child {
+  margin-right: 0;
+}
+
+.card-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  justify-content: center;
+}
+*/
+
+
+#movies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#movies h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.movie-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card-img {
+  width: 300px;
+  height: 300;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #333; /* A dark gray background */
+  color: white; /* White text color for better contrast */
+  text-align: center; /* Centers the text within the footer */
+  padding: 10px; /* Adding 10px of padding on all sides */
+  margin-top: 20px; /* Adding some top margin to separate it from the content above */
+}
+
+footer a {
+  color: white; /* Ensuring the links are also white */
+  margin: 0 15px; /* Adding horizontal spacing between the links */
+  text-decoration: none; /* Removing underlines from the links */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Adding an underline on hover for better interaction feedback */
+}
